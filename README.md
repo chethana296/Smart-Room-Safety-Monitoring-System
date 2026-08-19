@@ -1,70 +1,112 @@
-# Smart Room Safety Monitoring System Using Arduino
+<div align="center">
 
-## Internship Capstone Project
+# 🏠 Smart Room Safety Monitoring System
 
-### Student Details
+### Arduino-Based Environmental & Proximity Safety Monitoring
 
-**Name:** Chethana R  
-**Roll No:** 20241CIT0158  
-**Program:** B.Tech Computer Science and Engineering (Internet of Things)  
-**University:** Presidency University, Bengaluru  
-**Academic Year:** 2026–2027  
+<p>
+  <b>Gas Detection</b> •
+  <b>Temperature Monitoring</b> •
+  <b>Object Detection</b> •
+  <b>LED Alerts</b> •
+  <b>Buzzer Alert</b>
+</p>
 
-### Internship Guide
-
-**Dr. Ranjitha P.**
-
----
-
-## Project Overview
-
-The **Smart Room Safety Monitoring System Using Arduino** is an Arduino-based safety monitoring system developed to monitor important environmental and proximity conditions inside a room.
-
-The system monitors:
-
-- Gas level
-- Temperature
-- Distance/proximity
-
-Based on the sensor readings, the system provides visual and audio alerts using LEDs and a buzzer.
-
-The project was developed and tested through simulation and hardware implementation.
+</div>
 
 ---
 
-## Objectives
+## 📸 Project Preview
 
-The main objectives of the project are:
+<div align="center">
 
-1. To monitor gas levels in a room.
-2. To monitor room temperature.
-3. To detect nearby objects using an ultrasonic sensor.
-4. To indicate the safe condition using a green LED.
-5. To provide warning indications using yellow and red LEDs.
-6. To provide an audio alert using a buzzer.
-7. To display real-time sensor readings through the Serial Monitor.
-8. To implement a low-cost room safety monitoring system using Arduino.
+<img src="hardware screenshot.jpeg" alt="Smart Room Safety Monitoring System Hardware" width="800">
+
+</div>
 
 ---
 
-## Hardware Components
+## 🛠️ Technologies & Tools
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white">
+
+<img src="https://img.shields.io/badge/C%2FC%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white">
+
+<img src="https://img.shields.io/badge/IoT-0A0A0A?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Tinkercad-1479FF?style=for-the-badge&logo=autodesk&logoColor=white">
+
+<img src="https://img.shields.io/badge/Embedded%20Systems-333333?style=for-the-badge">
+
+</p>
+
+---
+
+# 📌 About The Project
+
+The **Smart Room Safety Monitoring System Using Arduino** is an Arduino-based safety monitoring system designed to monitor important environmental and proximity conditions inside a room.
+
+The system continuously monitors:
+
+- 🌫️ Gas level
+- 🌡️ Temperature
+- 📏 Distance / proximity
+
+Based on the sensor readings, the Arduino determines the current safety condition and provides **visual and audio alerts** using LEDs and a buzzer.
+
+The project was developed using **Arduino programming**, tested using **Tinkercad simulation**, and implemented using physical hardware.
+
+---
+
+# 🎯 Objectives
+
+- Monitor gas levels inside a room.
+- Monitor room temperature.
+- Detect nearby objects using an ultrasonic sensor.
+- Indicate a safe condition using a green LED.
+- Provide warning indication using a yellow LED.
+- Provide critical alert indication using a red LED.
+- Generate an audio warning using a buzzer.
+- Display real-time sensor readings through the Serial Monitor.
+- Develop a low-cost room safety monitoring system using Arduino.
+
+---
+
+# ✨ Key Features
+
+| Feature | Description |
+|---|---|
+| 🌫️ Gas Monitoring | Monitors gas sensor readings |
+| 🌡️ Temperature Monitoring | Measures room temperature |
+| 📏 Proximity Detection | Detects nearby objects |
+| 🟢 Safe Indication | Green LED indicates safe condition |
+| 🟡 Temperature Warning | Yellow LED indicates high temperature |
+| 🔴 Critical Alert | Red LED indicates critical conditions |
+| 🔊 Audio Alert | Buzzer provides warning sound |
+| 📟 Serial Monitoring | Displays sensor values and system status |
+
+---
+
+# 🔌 Hardware Components
 
 | Component | Purpose |
 |---|---|
 | Arduino Uno | Main controller |
 | Gas Sensor | Gas level detection |
 | Temperature Sensor | Temperature monitoring |
-| Ultrasonic Sensor | Distance/proximity detection |
-| Green LED | Safe condition indication |
+| HC-SR04 Ultrasonic Sensor | Distance/proximity detection |
+| Green LED | Safe condition |
 | Yellow LED | High-temperature warning |
-| Red LED | Critical alert indication |
+| Red LED | Critical alert |
 | Buzzer | Audio warning |
 | Breadboard | Circuit prototyping |
-| Jumper Wires | Connections |
+| Jumper Wires | Electrical connections |
 
 ---
 
-## Pin Configuration
+# 📍 Pin Configuration
 
 | Component | Arduino Pin |
 |---|---|
@@ -79,171 +121,168 @@ The main objectives of the project are:
 
 ---
 
-## System Working
+# ⚙️ System Architecture
 
-The Arduino continuously reads the connected sensors and evaluates the readings against predefined safety conditions.
+<div align="center">
 
-### Safe Condition
+**Sensors**
 
-When the monitored values are within the safe range:
+⬇️
 
-- Green LED is ON.
-- Yellow LED is OFF.
-- Red LED is OFF.
-- Buzzer is OFF.
-- Serial Monitor displays `STATUS : SAFE`.
+🌫️ Gas Sensor  
+🌡️ Temperature Sensor  
+📏 Ultrasonic Sensor
 
-### Gas Leak Detection
+⬇️
+
+**Arduino Uno**
+
+⬇️
+
+**Condition Evaluation**
+
+⬇️
+
+🟢 Safe  
+🟡 Warning  
+🔴 Critical Alert
+
+⬇️
+
+💡 LEDs + 🔊 Buzzer + 📟 Serial Monitor
+
+</div>
+
+---
+
+# 🔄 How The System Works
+
+The Arduino continuously reads values from the connected sensors.
+
+The sensor readings are then compared with predefined safety thresholds.
+
+### 🟢 Safe Condition
+
+When all monitored values remain within the safe range:
+
+- Green LED → ON
+- Yellow LED → OFF
+- Red LED → OFF
+- Buzzer → OFF
+- Serial Monitor → `STATUS : SAFE`
+
+---
+
+### 🔴 Gas Leak Detection
 
 When the gas sensor reading exceeds the defined threshold:
 
-- Green LED is turned OFF.
-- Red LED is activated.
-- Buzzer is activated.
-- Serial Monitor displays `STATUS : GAS LEAK DETECTED`.
+- Green LED → OFF
+- Red LED → ON / alert indication
+- Buzzer → ON
+- Serial Monitor → `STATUS : GAS LEAK DETECTED`
 
-### High Temperature
+**Gas threshold:**
+
+`Gas Value > 450`
+
+---
+
+### 🟡 High Temperature
 
 When the measured temperature exceeds the defined threshold:
 
-- Green LED is turned OFF.
-- Yellow LED is activated.
-- Buzzer is activated.
-- Serial Monitor displays `STATUS : HIGH TEMPERATURE`.
+- Green LED → OFF
+- Yellow LED → ON / warning indication
+- Buzzer → ON
+- Serial Monitor → `STATUS : HIGH TEMPERATURE`
 
-### Object Detection
+**Temperature threshold:**
+
+`Temperature > 35°C`
+
+---
+
+### 🔴 Object Detection
 
 When an object is detected within the defined distance:
 
-- Green LED is turned OFF.
-- Red LED is activated.
-- Buzzer is activated.
-- Serial Monitor displays `STATUS : OBJECT DETECTED`.
+- Green LED → OFF
+- Red LED → ON / alert indication
+- Buzzer → ON
+- Serial Monitor → `STATUS : OBJECT DETECTED`
+
+**Distance threshold:**
+
+`Distance < 15 cm`
 
 ---
 
-## Safety Thresholds
+# 📊 Safety Conditions
 
-The implemented program uses the following threshold values:
-
-| Parameter | Threshold |
-|---|---|
-| Gas Sensor | Greater than 450 |
-| Temperature | Greater than 35 °C |
-| Distance | Less than 15 cm |
-
-These values are used by the Arduino program to determine the system status.
+| Condition | Threshold | LED | Buzzer |
+|---|---:|---|---|
+| 🟢 Safe | Normal values | Green | OFF |
+| 🔴 Gas Leak | Gas > 450 | Red | ON |
+| 🟡 High Temperature | > 35°C | Yellow | ON |
+| 🔴 Object Detected | < 15 cm | Red | ON |
 
 ---
 
-## Software and Tools
+# 🖥️ Tinkercad Simulation
 
-The project uses:
+The circuit was designed and tested using **Tinkercad Circuits** to verify the circuit connections and Arduino program logic.
 
-- Arduino IDE
-- Arduino C/C++ programming
-- Tinkercad Circuits
-- Serial Monitor
+### Simulation Circuit
 
----
+<div align="center">
 
-## Simulation
+<img src="Screenshot 2026-08-18 201519.png" alt="Tinkercad Circuit Simulation" width="900">
 
-The circuit was designed and tested using Tinkercad before/alongside the physical hardware implementation.
+</div>
 
 The simulation was used to verify:
 
-- Circuit connections
+- Arduino connections
+- Sensor interfacing
 - LED indications
 - Buzzer operation
 - Sensor-based conditions
-- Arduino program logic
-
-The Tinkercad circuit image is included in this repository.
+- Program logic
 
 ---
 
-## Hardware Implementation
+# 🔧 Hardware Implementation
 
 The project was also implemented using physical hardware.
 
-The hardware setup consists of the Arduino board, sensors, LEDs, buzzer, breadboard and connecting wires.
+The setup contains:
 
-The physical implementation was tested under different conditions to verify the safety indications and alerts.
+- Arduino Uno
+- Gas sensor
+- Temperature sensor
+- Ultrasonic sensor
+- LEDs
+- Buzzer
+- Breadboard
+- Jumper wires
 
----
+### Hardware Setup
 
-## Results
+<div align="center">
 
-The system provides different outputs according to the detected condition.
+<img src="hardware screenshot.jpeg" alt="Physical Hardware Implementation" width="900">
 
-| Condition | LED Indication | Buzzer | Serial Monitor |
-|---|---|---|---|
-| Safe | Green | OFF | SAFE |
-| Gas Leak | Red | ON | GAS LEAK DETECTED |
-| High Temperature | Yellow | ON | HIGH TEMPERATURE |
-| Object Detected | Red | ON | OBJECT DETECTED |
-
----
-
-## Project Demonstration
-
-The project demonstrates:
-
-- Arduino programming
-- Sensor interfacing
-- Gas monitoring
-- Temperature monitoring
-- Ultrasonic distance measurement
-- LED-based status indication
-- Buzzer-based alerting
-- Serial Monitor monitoring
-- Condition-based control
+</div>
 
 ---
 
-## Repository Contents
+# 📟 Serial Monitor
 
-### Arduino Code
+The Arduino Serial Monitor provides real-time information about the sensor readings and current safety status.
 
-The complete Arduino source code is available in:
+Example:
 
-`Arduino_Code/Smart_Room_Safety_Monitoring_System.ino`
-
-### Circuit
-
-The Tinkercad circuit image is available in:
-
-`Tinkercad_Circuit.png`
-
-### Hardware
-
-The physical hardware implementation photograph is included in the repository.
-
-### Documentation
-
-The complete internship report is included as a PDF.
-
----
-
-## Future Scope
-
-The system can be further enhanced by adding:
-
-- Wi-Fi connectivity
-- Cloud-based monitoring
-- Mobile application integration
-- Remote notifications
-- LCD/OLED display
-- Automatic exhaust fan control
-- Relay-based appliance control
-- Remote safety monitoring
-
----
-
-## Author
-
-**Chethana R**  
-**Roll No:** 20241CIT0158  
-**B.Tech CSE (IoT)**  
-**Presidency University, Bengaluru**
+```text
+Gas: 91 | Temperature: 24.71 C | Distance: 80.31 cm
+STATUS : SAFE
